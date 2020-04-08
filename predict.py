@@ -13,7 +13,7 @@ WIDTH = 416
 
 
 model = mobilenet_segnet(n_classes=NCLASSES,input_height=HEIGHT, input_width=WIDTH)
-model.load_weights("logs/ep008-loss0.194-val_loss0.164.h5")
+model.load_weights("SegNet_Mobile/logs/last1.h5")
 
 imgs = os.listdir("SegNet_Mobile/dataset2/jpg/")
 
