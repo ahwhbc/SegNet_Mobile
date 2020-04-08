@@ -15,11 +15,11 @@ WIDTH = 416
 model = mobilenet_segnet(n_classes=NCLASSES,input_height=HEIGHT, input_width=WIDTH)
 model.load_weights("logs/ep008-loss0.194-val_loss0.164.h5")
 
-imgs = os.listdir("./dataset2/jpg/")
+imgs = os.listdir("SegNet_Mobile/dataset2/jpg/")
 
 for jpg in imgs:
 
-    img = Image.open("./dataset2/jpg/"+jpg)
+    img = Image.open("SegNet_Mobile/dataset2/jpg/"+jpg)
     old_img = copy.deepcopy(img)
     orininal_h = np.array(img).shape[0]
     orininal_w = np.array(img).shape[1]
@@ -43,6 +43,6 @@ for jpg in imgs:
     seg_img = Image.fromarray(np.uint8(seg_img)).resize((orininal_w,orininal_h))
 
     image = Image.blend(old_img,seg_img,0.3)
-    image.save("./img_out/"+jpg)
+    image.save("SegNet_Mobile/img_out/"+jpg)
 
 
