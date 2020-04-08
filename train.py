@@ -51,7 +51,7 @@ def loss(y_true, y_pred):
     return loss
 
 if __name__ == "__main__":
-    log_dir = "logs/"
+    log_dir = "SegNet_Mobile/logs/"
     # 获取model
     model = mobilenet_segnet(n_classes=NCLASSES,input_height=HEIGHT, input_width=WIDTH)
     # model.summary()
