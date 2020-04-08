@@ -23,7 +23,7 @@ def generate_arrays_from_file(lines,batch_size):
                 np.random.shuffle(lines)
             name = lines[i].split(';')[0]
             # 从文件中读取图像
-            img = Image.open(r"./dataset2\jpg" + '/' + name)
+            img = Image.open(r"./dataset2/jpg" + '/' + name)
             img = img.resize((WIDTH,HEIGHT))
             img = np.array(img)
             img = img/255
@@ -31,7 +31,7 @@ def generate_arrays_from_file(lines,batch_size):
 
             name = (lines[i].split(';')[1]).replace("\n", "")
             # 从文件中读取图像
-            img = Image.open(r"./dataset2\png" + '/' + name)
+            img = Image.open(r"./dataset2/png" + '/' + name)
             img = img.resize((int(WIDTH/2),int(HEIGHT/2)))
             img = np.array(img)
             seg_labels = np.zeros((int(HEIGHT/2),int(WIDTH/2),NCLASSES))
